@@ -376,6 +376,51 @@ const aiTheory = [
             "NTK and generalizability",
         ],
     },
+    {
+        text: "Bayesian ML I",
+        link: "https://www.borealisai.com/research-blogs/bayesian-machine-learning-parameter-space/",
+        details: [
+            "Maximum likelihood",
+            "Maximum a posteriori",
+            "The Bayesian approach",
+            "Example: 1D linear regression",
+            "Practical concerns",
+        ],
+    },
+    {
+        text: "Bayesian ML II",
+        link: "https://www.borealisai.com/research-blogs/bayesian-machine-learning-function-space/",
+        details: [
+            "Function space",
+            "Gaussian processes",
+            "Inference",
+            "Non-linear regression",
+            "Kernels and the kernel trick",
+        ],
+    },
+    {
+        text: "Bayesian neural networks",
+        link: "https://rbcborealis.com/research-blogs/bayesian-neural-networks/",
+        details: [
+            "Sampling vs. variational approximation",
+            "MCMC methods",
+            "SWAG and MultiSWAG",
+            "Bayes by backprop",
+            "Monte Carlo dropout",
+        ],
+    },
+    {
+        text: "Neural network Gaussian processes",
+        link: "https://rbcborealis.com/research-blogs/neural-network-gaussian-processes/",
+        details: [
+            "Shallow networks as GPs",
+            "Neural network Gaussian processes",
+            "NNGP Kernel",
+            "Kernel regression",
+            "Network stability",
+        ],
+    },
+    
 ];
 
 const unsupervisedLearning = [
@@ -664,6 +709,50 @@ const responsibleAI = [
     },
 ];
 
+const ODESDE = [
+    {
+        text: "ODEs and SDEs in machine learning",
+        link: "https://rbcborealis.com/research-blogs/odes-and-sdes-for-machine-learning/",
+        details: [
+            "ODEs",
+            "SDEs",
+            "ODEs and gradient descent",
+            "SDEs in stochastic gradient descent",
+            "ODEs in residual networks",
+            "ODEs and SDES in diffusion models",
+            "Physics-informed machine learning",
+        ],
+    },
+    {
+        text: "Introduction to ODEs",
+        link: "https://rbcborealis.com/research-blogs/introduction-ordinary-differential-equations/",
+        details: [
+            "What are ODEs?",
+            "Terminology and properties",
+            "Solutions",
+            "Boundary conditions",
+            "Existence of solutions",
+        ],
+    },
+    {
+        text: "Closed-form solutions for ODEs",
+        link: "https://rbcborealis.com/research-blogs/closed-form-solutions-for-odes/",
+        details: [
+            "Validating proposed solutions",
+            "Class 1: Right-hand side is a function of t only",
+            "Class 2: Linear homogeneous",
+            "Class 3: right-hand side is function of x alone",
+            "Class 4: Right-hand side is a separable function of x and t",
+            "Class 5: Exact ODEs",
+            "Class 6: linear inhomogeneous ODEs",
+            "Class 7: Euler homogeneous",
+            "Vector ODEs",
+            "The matrix exponential"
+        ],
+    },
+]
+
+
 export default function MoreSection() {
     return (
         <>
@@ -689,7 +778,7 @@ export default function MoreSection() {
                     </MoreRow>
                     <MoreRow2>
                         <Column1>
-                            <TopLine>Book</TopLine>
+                            <TopLine>Computer vision book</TopLine>
                             <MoreOuterList>
                                 {book.map((item, index) => (
                                     <li key={index}>
@@ -814,10 +903,27 @@ export default function MoreSection() {
                                     </li>
                                 ))}
                             </MoreOuterList>
+                            <TopLine>ODEs and SDEs in machine learning</TopLine>
+                            <MoreOuterList>
+                                {ODESDE.map((item, index) => (
+                                    <li key={index}>
+                                        <MoreLink href={item.link} target="_blank" rel="noreferrer">
+                                            {item.text}
+                                        </MoreLink>
+                                        <MoreInnerP>
+                                            <MoreInnerList>
+                                                {item.details.map((detail, index) => (
+                                                    <li key={index}>{detail}</li>
+                                                ))}
+                                            </MoreInnerList>
+                                        </MoreInnerP>
+                                    </li>
+                                ))}
+                            </MoreOuterList>
                         </Column1>
 
                         <Column2>
-                            <TopLine>AI Theory</TopLine>
+                            <TopLine>ML Theory</TopLine>
                             <MoreOuterList>
                                 {aiTheory.map((item, index) => (
                                     <li key={index}>
